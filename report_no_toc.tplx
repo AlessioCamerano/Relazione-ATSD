@@ -1,0 +1,38 @@
+((*- extends 'article.tplx' -*))
+
+% -----
+% Title
+% -----
+((* block title *))
+    \title{((( nb.metadata.get('title', 'Analisi dei Segnali del Giroscopio') | escape_latex )))}
+    \author{
+        Studente: ((( nb.metadata.get('author', 'Alessio Camerano') | escape_latex ))) \\
+        Matricola: ((( nb.metadata.get('matricola', '1044444') | escape_latex ))) \\
+        Corso: ((( nb.metadata.get('course', 'Analisi e Trattamento Segnali Digitali') | escape_latex )))
+    }
+    \date{\today}
+((* endblock title *))
+
+% ---------
+% Maketitle
+% ---------
+((* block maketitle *))
+    \maketitle
+    \thispagestyle{empty}
+    \newpage
+((* endblock maketitle *))
+
+% ---------------------------
+% Remove automatic TOC
+% ---------------------------
+((* block tableofcontents *))
+((* endblock tableofcontents *))
+
+% ---------------------------
+% Hide input/output prompts
+% ---------------------------
+((* block in_prompt *))
+((* endblock in_prompt *))
+
+((* block out_prompt *))
+((* endblock out_prompt *))
